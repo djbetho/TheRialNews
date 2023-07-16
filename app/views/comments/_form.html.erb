@@ -1,0 +1,29 @@
+<%= form_with(model: comment, class: "form") do |form| %>
+  <% if comment.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+        <% comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :content, "Contenido", class: "form-label fs-5 fw-bold text-light" %>
+    <%= form.text_field :content, class: "form-control rounded-pill" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :user_id, class: "form-label fs-5 fw-bold text-light" %>
+    <%= form.text_field :user_id, class: "form-control rounded-pill" %>
+  </div>
+
+ 
+
+  <div class="text-center input-group">
+     <%= form.submit "Actualizar", class: " btn btn-primary" %>
+  </div>
+<% end %>
