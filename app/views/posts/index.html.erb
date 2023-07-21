@@ -40,7 +40,7 @@
   <div class="card-footer  d-flex justify-content-between "; style="font-size:12px">
     <%= time_ago_in_words(post.created_at, locale: :es) %>
     Autor: <%= post.user.email %>
-    <%= link_to "Ver Noticia", post, class:"text-light" %>
+    <%= link_to "Ver Noticia", post %>
       </div>
       </div>
     </div>
